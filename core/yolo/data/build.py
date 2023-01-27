@@ -88,7 +88,7 @@ def build_dataloader(cfg, batch_size, img_path, stride=32, label_path=None, rank
     return loader(dataset=dataset,
                   batch_size=batch_size,
                   shuffle=shuffle and sampler is None,
-                  num_workers=nw,
+                  num_workers=0,
                   sampler=sampler,
                   pin_memory=PIN_MEMORY,
                   collate_fn=getattr(dataset, "collate_fn", None),
