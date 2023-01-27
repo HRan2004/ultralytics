@@ -1,10 +1,10 @@
 
 from core import YOLO
-from PIL import Image
+import os
 
-model = YOLO("weights/yolov8x.pt")
+os.environ['KMP_DUPLICATE_LIB_OK']='TRUE'
 
-im1 = Image.open("assets/bus.jpg")
-results = model.predict(source=im1, save=True)
+model = YOLO("weights/yolov8n.pt")
+model.train(data="EacDataInfo.yaml", epochs=5)
 
 
