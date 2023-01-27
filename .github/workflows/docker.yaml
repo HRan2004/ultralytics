@@ -1,5 +1,5 @@
 # Ultralytics YOLO 🚀, GPL-3.0 license
-# Builds ultralytics/ultralytics:latest images on DockerHub https://hub.docker.com/r/ultralytics
+# Builds core/core:latest images on DockerHub https://hub.docker.com/r/ultralytics
 
 name: Publish Docker Images
 
@@ -9,7 +9,7 @@ on:
 
 jobs:
   docker:
-    if: github.repository == 'ultralytics/ultralytics'
+    if: github.repository == 'core/core'
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
@@ -36,7 +36,7 @@ jobs:
           platforms: linux/arm64
           file: docker/Dockerfile-arm64
           push: true
-          tags: ultralytics/ultralytics:latest-arm64
+          tags: core/core:latest-arm64
 
       - name: Build and push CPU image
         uses: docker/build-push-action@v3
@@ -45,7 +45,7 @@ jobs:
           context: .
           file: docker/Dockerfile-cpu
           push: true
-          tags: ultralytics/ultralytics:latest-cpu
+          tags: core/core:latest-cpu
 
       - name: Build and push GPU image
         uses: docker/build-push-action@v3
@@ -54,4 +54,4 @@ jobs:
           context: .
           file: docker/Dockerfile
           push: true
-          tags: ultralytics/ultralytics:latest
+          tags: core/core:latest

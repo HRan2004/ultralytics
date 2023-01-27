@@ -15,12 +15,12 @@ PKG_REQUIREMENTS = ['sentry_sdk']  # pip-only requirements
 
 
 def get_version():
-    file = PARENT / 'ultralytics/__init__.py'
+    file = PARENT / 'core/__init__.py'
     return re.search(r'^__version__ = [\'"]([^\'"]*)[\'"]', file.read_text(encoding="utf-8"), re.M)[1]
 
 
 setup(
-    name="ultralytics",  # name of pypi package
+    name="core",  # name of pypi package
     version=get_version(),  # version of pypi package
     python_requires=">=3.7,<=3.11",
     license='GPL-3.0',
@@ -33,7 +33,7 @@ setup(
         'Funding': 'https://ultralytics.com',
         'Source': 'https://github.com/ultralytics/ultralytics'},
     author="Ultralytics",
-    author_email='hello@ultralytics.com',
+    author_email='hello@core.com',
     packages=find_packages(),  # required
     include_package_data=True,
     install_requires=REQUIREMENTS + PKG_REQUIREMENTS,
@@ -51,4 +51,4 @@ setup(
         "Operating System :: MacOS", "Operating System :: Microsoft :: Windows"],
     keywords="machine-learning, deep-learning, vision, ML, DL, AI, YOLO, YOLOv3, YOLOv5, YOLOv8, HUB, Ultralytics",
     entry_points={
-        'console_scripts': ['yolo = ultralytics.yolo.cfg:entrypoint', 'ultralytics = ultralytics.yolo.cfg:entrypoint']})
+        'console_scripts': ['yolo = core.yolo.cfg:entrypoint', 'core = core.yolo.cfg:entrypoint']})

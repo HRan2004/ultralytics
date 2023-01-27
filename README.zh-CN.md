@@ -56,7 +56,7 @@
 Pip 安装包含所有 [requirements.txt](https://github.com/ultralytics/ultralytics/blob/main/requirements.txt) 的 ultralytics 包，环境要求 [**3.10>=Python>=3.7**](https://www.python.org/)，且 [**PyTorch>=1.7**](https://pytorch.org/get-started/locally/)。
 
 ```bash
-pip install ultralytics
+pip install core
 ```
 
 </details>
@@ -82,7 +82,7 @@ yolo task=detect    mode=train    model=yolov8n.pt        args...
 YOLOv8 也可以在 Python 环境中直接使用，并接受与上面 CLI 例子中相同的[参数](https://docs.ultralytics.com/cfg/)：
 
 ```python
-from ultralytics import YOLO
+from core import YOLO
 
 # 加载模型
 model = YOLO("yolov8n.yaml")  # 从头开始构建新模型

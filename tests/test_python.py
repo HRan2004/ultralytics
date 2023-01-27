@@ -6,8 +6,8 @@ import cv2
 import torch
 from PIL import Image
 
-from ultralytics import YOLO
-from ultralytics.yolo.utils import ROOT, SETTINGS
+from core import YOLO
+from core.yolo.utils import ROOT, SETTINGS
 
 MODEL = Path(SETTINGS['weights_dir']) / 'yolov8n.pt'
 CFG = 'yolov8n.yaml'
@@ -89,7 +89,7 @@ def test_export_torchscript():
     10          TensorFlow.js         tfjs       _web_model  False  False
     11           PaddlePaddle       paddle    _paddle_model   True   True
     """
-    from ultralytics.yolo.engine.exporter import export_formats
+    from core.yolo.engine.exporter import export_formats
     print(export_formats())
 
     model = YOLO(MODEL)
