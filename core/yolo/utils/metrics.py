@@ -13,6 +13,8 @@ import torch.nn as nn
 
 from core.yolo.utils import TryExcept
 
+plt.rcParams['font.sans-serif'] = ['SimHei', 'FangSong']
+plt.rcParams['axes.unicode_minus'] = False
 
 # boxes
 def box_area(box):
@@ -230,6 +232,7 @@ class ConfusionMatrix:
     @TryExcept('WARNING ⚠️ ConfusionMatrix plot failure')
     def plot(self, normalize=True, save_dir='', names=()):
         import seaborn as sn
+        sn.set(font='SimHei')
 
         array = self.matrix / ((self.matrix.sum(0).reshape(1, -1) + 1E-9) if normalize else 1)  # normalize columns
         array[array < 0.005] = np.nan  # don't annotate (would appear as 0.00)
@@ -244,8 +247,7 @@ class ConfusionMatrix:
             sn.heatmap(array,
                        ax=ax,
                        annot=nc < 30,
-                       annot_kws={
-                           "size": 8},
+                       annot_kws={"size": 8},
                        cmap='Blues',
                        fmt='.2f',
                        square=True,

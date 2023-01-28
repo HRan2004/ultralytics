@@ -11,6 +11,9 @@ from core.yolo.utils import DEFAULT_CFG, LOGGER, callbacks, yaml_load
 from core.yolo.utils.checks import check_yaml
 from core.yolo.utils.torch_utils import smart_inference_mode
 
+import os
+os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
+
 # Map head to model, trainer, validator, and predictor classes
 MODEL_MAP = {
     "classify": [
