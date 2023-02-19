@@ -60,7 +60,7 @@ ultralytics 包，环境要求 [**Python>=3.7**](https://www.python.org/)，且 
 \*\*](https://pytorch.org/get-started/locally/)。
 
 ```bash
-pip install core
+pip install ultralytics
 ```
 
 </details>
