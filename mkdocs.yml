@@ -1,11 +1,12 @@
-site_name: Ultralytics YOLOv8 Docs
+site_name: YOLOv8 Docs
 repo_url: https://github.com/ultralytics/ultralytics
 edit_uri: https://github.com/ultralytics/ultralytics/tree/main/docs
-repo_name: core/core
+repo_name: ultralytics/ultralytics
+remote_name: https://github.com/ultralytics/docs
 
 theme:
   name: "material"
-  logo: https://github.com/ultralytics/assets/raw/main/logo/Ultralytics-logomark-white.png
+  logo: https://github.com/ultralytics/assets/raw/main/logo/Ultralytics_Logotype_Reverse.svg
   favicon: https://github.com/ultralytics/assets/raw/main/logo/favicon-yolo.ico
   font:
     text: Roboto
@@ -37,10 +38,27 @@ theme:
     - navigation.footer
     - content.tabs.link  # all code tabs change simultaneously
 
-# Version drop-down menu
-# extra:
-#   version:
-#     provider: mike
+# Customization
+copyright: Ultralytics 2023. All rights reserved.
+extra:
+  # version:
+  #   provider: mike  #  version drop-down menu
+  analytics:
+    provider: google
+    property: G-2M5EHKC0BH
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ultralytics
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/ultralytics
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/ultralytics
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/ultralytics
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/ultralytics/ultralytics/
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/ultralytics/
 
 extra_css:
   - stylesheets/style.css
@@ -104,3 +122,4 @@ nav:
           - Results: reference/results.md
       - ultralytics.nn: reference/nn.md
       - Operations: reference/ops.md
+  - Security: SECURITY.md

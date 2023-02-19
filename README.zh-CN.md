@@ -1,6 +1,6 @@
 <div align="center">
   <p>
-    <a align="center" href="https://ultralytics.com/yolov8" target="_blank">
+    <a href="https://ultralytics.com/yolov8" target="_blank">
       <img width="850" src="https://raw.githubusercontent.com/ultralytics/assets/main/yolov8/banner-yolov8.png"></a>
   </p>
 
@@ -101,8 +101,8 @@ success = model.export(format="onnx")  # 将模型导出为 ONNX 格式
 
 我们仍在努力完善 YOLOv8 的几个部分！我们的目标是尽快完成这些工作，使 YOLOv8 的功能设置达到YOLOv5 的水平，包括对所有相同格式的导出和推理。我们还在写一篇 YOLOv8 的论文，一旦完成，我们将提交给 [arxiv.org](https://arxiv.org)。
 
-- [ ] TensorFlow 导出
-- [ ] DDP 恢复训练
+- [x] TensorFlow 导出
+- [x] DDP 恢复训练
 - [ ] [arxiv.org](https://arxiv.org) 论文
 
 </details>
@@ -167,23 +167,23 @@ success = model.export(format="onnx")  # 将模型导出为 ONNX 格式
 ## <div align="center">模块集成</div>
 
 <br>
-<a align="center" href="https://bit.ly/ultralytics_hub" target="_blank">
+<a href="https://bit.ly/ultralytics_hub" target="_blank">
 <img width="100%" src="https://github.com/ultralytics/assets/raw/main/yolov8/banner-integrations.png"></a>
 <br>
 <br>
 
 <div align="center">
   <a href="https://roboflow.com/?ref=ultralytics">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-roboflow.png" width="10%" /></a>
+    <img src="https://github.com/ultralytics/assets/raw/main/partners/logo-roboflow.png" width="10%" /></a>
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="15%" height="0" alt="" />
   <a href="https://cutt.ly/yolov5-readme-clearml">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-clearml.png" width="10%" /></a>
+    <img src="https://github.com/ultralytics/assets/raw/main/partners/logo-clearml.png" width="10%" /></a>
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="15%" height="0" alt="" />
   <a href="https://bit.ly/yolov5-readme-comet">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-comet.png" width="10%" /></a>
+    <img src="https://github.com/ultralytics/assets/raw/main/partners/logo-comet.png" width="10%" /></a>
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="15%" height="0" alt="" />
   <a href="https://bit.ly/yolov5-neuralmagic">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-neuralmagic.png" width="10%" /></a>
+    <img src="https://github.com/ultralytics/assets/raw/main/partners/logo-neuralmagic.png" width="10%" /></a>
 </div>
 
 |                                      Roboflow                                      |                                 ClearML ⭐ 新                                 |                                     Comet ⭐ 新                                     |                                    Neural Magic ⭐ 新                                    |
@@ -194,7 +194,7 @@ success = model.export(format="onnx")  # 将模型导出为 ONNX 格式
 
 [Ultralytics HUB](https://bit.ly/ultralytics_hub) 是我们⭐ **新**的无代码解决方案，用于可视化数据集，训练 YOLOv8🚀 模型，并以无缝体验方式部署到现实世界。现在开始**免费**! 还可以通过下载 [Ultralytics App](https://ultralytics.com/app_install) 在你的 iOS 或 Android 设备上运行 YOLOv8 模型!
 
-<a align="center" href="https://bit.ly/ultralytics_hub" target="_blank">
+<a href="https://bit.ly/ultralytics_hub" target="_blank">
 <img width="100%" src="https://github.com/ultralytics/assets/raw/main/im/ultralytics-hub.png"></a>
 
 ## <div align="center">贡献</div>
@@ -203,7 +203,8 @@ success = model.export(format="onnx")  # 将模型导出为 ONNX 格式
 
 <!-- SVG image from https://opencollective.com/ultralytics/contributors.svg?width=990 -->
 
-<a href="https://github.com/ultralytics/ultralytics/graphs/contributors"><img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/image-contributors-1280.png"/></a>
+<a href="https://github.com/ultralytics/yolov5/graphs/contributors">
+<img src="https://github.com/ultralytics/assets/raw/main/im/image-contributors.png" /></a>
 
 ## <div align="center">License</div>
 
@@ -213,7 +214,7 @@ success = model.export(format="onnx")  # 将模型导出为 ONNX 格式
 
 ## <div align="center">联系我们</div>
 
-若发现 YOLOv8 的 Bug 或有功能需求，请访问 [GitHub 问题](https://github.com/ultralytics/ultralytics/issues)。如需专业支持，请 [联系我们](https://ultralytics.com/contact)。
+请访问 [GitHub Issues](https://github.com/ultralytics/ultralytics/issues) 或 [Ultralytics Community Forum](https://community.ultralytis.com) 以报告 YOLOv8 错误和请求功能。
 
 <br>
 <div align="center">
