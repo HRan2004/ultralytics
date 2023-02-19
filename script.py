@@ -1,5 +1,5 @@
 
-from core import YOLO
+from ultralytics import YOLO
 
 
 model = YOLO("weights/yolov8l.pt")

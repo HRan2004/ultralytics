@@ -82,7 +82,7 @@ yolo task=detect    mode=train    model=yolov8n.pt        args...
 YOLOv8 也可以在 Python 环境中直接使用，并接受与上面 CLI 例子中相同的[参数](https://docs.ultralytics.com/cfg/)：
 
 ```python
-from core import YOLO
+from ultralytics import YOLO
 
 # 加载模型
 model = YOLO("yolov8n.yaml")  # 从头开始构建新模型
