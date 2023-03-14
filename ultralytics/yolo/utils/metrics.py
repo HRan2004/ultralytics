@@ -13,6 +13,8 @@ import torch.nn as nn
 
 from ultralytics.yolo.utils import TryExcept
 
+import matplotlib
+matplotlib.rc("font", family='Microsoft YaHei')
 
 # boxes
 def box_area(box):
@@ -244,8 +246,7 @@ class ConfusionMatrix:
             sn.heatmap(array,
                        ax=ax,
                        annot=nc < 30,
-                       annot_kws={
-                           'size': 8},
+                       annot_kws={'size': 8},
                        cmap='Blues',
                        fmt='.2f',
                        square=True,
