@@ -1,25 +1,17 @@
 from ultralytics import YOLO
 import sys
 
-dir = 'train7'
+
+dir = 'train2'
 
 first = True
 while True:
     try:
         if first:
             first = False
-            YOLO('../weights/yolov8l.pt').train(
-                data='EacDataInfo.yaml',
-                task='detect',
-                epochs=220,
-            )
+            YOLO('../weights/yolov8l.pt').train(cfg='EacCfg.yaml')
         else:
-            YOLO('../runs/detect/'+dir+'/weights/last.pt').train(
-                data='EacDataInfo.yaml',
-                task='detect',
-                epochs=220,
-                resume=True,
-            )
+            YOLO('../weights/yolov8l.pt').train(cfg='EacCfg.yaml', resume=True)
         print('\nTrain finish')
         break
     except Exception as e:

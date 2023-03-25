@@ -150,6 +150,31 @@ def yaml_save(file='data.yaml', data=None):
                        sort_keys=False,
                        allow_unicode=True)
 
+def set_logging(name=LOGGING_NAME, verbose=True):
+    # sets up logging for the given name
+    rank = int(os.getenv('RANK', -1))  # rank in world for Multi-GPU trainings
+    level = logging.INFO if verbose and rank in (-1, 0) else logging.ERROR
+    logging.config.dictConfig({
+        'version': 1,
+        'disable_existing_loggers': False,
+        'formatters': {
+            name: {
+                'format': '%(message)s'}},
+        'handlers': {
+            name: {
+                'class': 'logging.StreamHandler',
+                'formatter': name,
+                'level': level}},
+        'loggers': {
+            name: {
+                'level': level,
+                'handlers': [name],
+                'propagate': False}}})
+
+
+# Set logger
+set_logging(LOGGING_NAME, verbose=VERBOSE)  # run before defining LOGGER
+LOGGER = logging.getLogger(LOGGING_NAME)  # define globally (used in train.py, val.py, detect.py, etc.)
 
 def yaml_load(file='data.yaml', append_filename=False):
     """
@@ -167,7 +192,7 @@ def yaml_load(file='data.yaml', append_filename=False):
         s = f.read()  # string
         if not s.isprintable():  # remove special characters
             s = re.sub(r'[^\x09\x0A\x0D\x20-\x7E\x85\xA0-\uD7FF\uE000-\uFFFD\U00010000-\U0010ffff]+', '', s)
-        return {**yaml.safe_load(s), 'yaml_file': str(file)} if append_filename else yaml.safe_load(s)
+        return {**yaml.safe_load(s)} if append_filename else yaml.safe_load(s)
 
 
 def yaml_print(yaml_file: Union[str, Path, dict]) -> None:

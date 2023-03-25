@@ -1,8 +1,9 @@
 
-path: E:\EAC-DATA-YOLO  # dataset root dir
-train: train.txt  # train images
-val: test.txt  # val images
-test:  # test images
+path: C:/Datasets  # dataset root dir
+
+train: train/images
+val: valid/images
+test:
 
 # number of classes
 nc: 98

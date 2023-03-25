@@ -11,7 +11,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-from ultralytics.yolo.utils import TryExcept
+from ultralytics.yolo.utils import TryExcept, LOGGER
 
 import matplotlib
 matplotlib.rc("font", family='Microsoft YaHei')
@@ -253,6 +253,12 @@ class ConfusionMatrix:
                        vmin=0.0,
                        xticklabels=ticklabels,
                        yticklabels=ticklabels).set_facecolor((1, 1, 1))
+        if labels:
+            ticks_size = 14
+            if nn >= 40:
+                ticks_size *= 38 / nn
+            plt.xticks(fontsize=ticks_size)
+            plt.yticks(fontsize=ticks_size)
         ax.set_xlabel('True')
         ax.set_ylabel('Predicted')
         ax.set_title('Confusion Matrix')
@@ -261,7 +267,7 @@ class ConfusionMatrix:
 
     def print(self):
         for i in range(self.nc + 1):
-            print(' '.join(map(str, self.matrix[i])))
+            LOGGER.info(' '.join(map(str, self.matrix[i])))
 
 
 def smooth(y, f=0.05):
